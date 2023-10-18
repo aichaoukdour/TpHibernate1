@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Configuration de la source de données (connexion à la base de données) -->
+        <property name="hibernate.connection.driver_class">H1_driver</property>
+        <property name="hibernate.connection.url">jdbc:your_database_url</property>
+        <property name="hibernate.connection.username">your_username</property>
+        <property name="hibernate.connection.password">your_password</property>
+
+        <!-- Configuration du dialecte SQL pour votre base de données -->
+        <property name="hibernate.dialect">org.hibernate.dialect.H1</property>
+
+        <!-- Configuration du fournisseur de connexion -->
+        <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+
+        <!-- Configuration des entités (classes) à gérer -->
+        <mapping class="ma.projet.classes.Employee" />
+        <mapping class="ma.projet.classes.Projet" />
+        <!-- Ajoutez d'autres classes ici -->
+
+        <!-- Autres configurations Hibernate (cache, logging, etc.) -->
+    </session-factory>
+</hibernate-configuration>
